@@ -173,7 +173,7 @@
           <p>Quotes curated by: Number333 aka Quote-chan</p>
           <p>Background Fanart by Marik</p>
           <p>Site by: Nodja</p>
-          <p><a href="https://github.com/jads-dev/joedle" target="_blank" rel="noopener noreferrer">Source Code</a></p>
+          <p><a href="https://github.com/nodja/joedle" target="_blank" rel="noopener noreferrer">Source Code</a></p>
        </div>
     </div>
   </div>

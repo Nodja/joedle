@@ -4,10 +4,10 @@ import re
 from collections import defaultdict
 
 # --- Configuration ---
-JOEVIDEOS_FILE = 'joevideotypes.txt'
-QUOTES_FILE = 'quotestodo.txt'
+JOEVIDEOS_FILE = 'joevideotypes.tsv'
+QUOTES_FILE = 'quotestodo.tsv'
 OUTPUT_FILE = 'quotestodo_filled.tsv'
-GAME_MAPPINGS_FILE = 'game_mappings.txt' # Optional: File for specific mappings
+GAME_MAPPINGS_FILE = 'game_mappings.tsv' # Optional: File for specific mappings
 
 # --- Helper Functions ---
 
@@ -333,6 +333,9 @@ if __name__ == "__main__":
     quotes_matched = 0
     output_header = ['Quote', 'Video', 'URL', 'Year', 'Type'] # Define expected output header
     output_lines.append("\t".join(output_header)) # Add header to output
+    i = -1 # Initialize i for error reporting outside the loop if needed
+    row = [] # Initialize row for error reporting outside the loop if needed
+
 
     try:
         with open(QUOTES_FILE, 'r', encoding='utf-8') as f_quotes:

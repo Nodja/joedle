@@ -1,0 +1,6 @@
+body {
+    background-color: #1a1a1a; /* Or another dark color you prefer */
+    color: #e0e0e0; /* Set default text color for better consistency */
+    margin: 0; /* Reset default body margin */
+    font-family: sans-serif; /* Set base font */
+  }

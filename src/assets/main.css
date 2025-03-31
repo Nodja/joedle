@@ -1,6 +1,17 @@
 body {
-    background-color: #1a1a1a; /* Or another dark color you prefer */
-    color: #e0e0e0; /* Set default text color for better consistency */
-    margin: 0; /* Reset default body margin */
-    font-family: sans-serif; /* Set base font */
-  }
+  /* --- Existing styles --- */
+  background-color: #b1b1b1; /* Fallback color */
+  color: #e0e0e0;
+  margin: 0;
+  font-family: sans-serif;
+
+  /* --- New background image styles --- */
+  background-image: url('/static/quotechan.jpg'); /* Path to your image */
+  background-repeat: no-repeat;        
+  background-attachment: fixed;        
+  background-position: right top;
+  background-size:  auto 100%;          
+
+  /* Optional: Ensure content doesn't scroll under a fixed header if you have one */
+  /* padding-top: 60px; */ /* Adjust if you have a fixed header */
+}

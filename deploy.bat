@@ -1,2 +1,3 @@
-npm run build
-npm run deploy
+@echo off
+call npm run build
+call npm run deploy

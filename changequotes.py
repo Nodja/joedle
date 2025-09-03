@@ -54,7 +54,7 @@ def save_quotes(quotes):
 
 
 if __name__ == "__main__":
-    date = "2025-07-04"  
+    date = "2025-09-04"  
     new_quote = {
         "quote": "RESERVED",
         "title": "RESERVED",
@@ -67,5 +67,5 @@ if __name__ == "__main__":
     quotes = insert_quote(date, new_quote)
     # save_quotes(quotes)
 
-    # quotes = remove_quote("2025-10-27")
+    # quotes = remove_quote("2025-09-05")
     save_quotes(quotes)

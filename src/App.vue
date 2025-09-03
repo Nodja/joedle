@@ -15,7 +15,7 @@
 
        <!-- Reserved Message -->
        <div v-if="isReserved" class="reserved-message">
-         <p>Not game today cause I'm going to do a bit. Sorry.</p>
+         <p>No game today cause I'm going to do a bit. Sorry. If joe is reading this on stream: I messed up/forgot, ooops.</p>
        </div>
 
        <!-- Guess Input & Autocomplete -->

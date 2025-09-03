@@ -8,13 +8,18 @@
       <p class="error-message">Could not find a quote for today ({{ todayKey }}). Please check quotes.json or try again tomorrow.</p>
     </div>
     <div v-else>
-      <!-- Quote Display -->
-      <blockquote class="quote-display">
-        "{{ quoteDisplay }}"
-      </blockquote>
+       <!-- Quote Display -->
+       <blockquote class="quote-display">
+         "{{ quoteDisplay }}"
+       </blockquote>
 
-      <!-- Guess Input & Autocomplete -->
-      <div class="guess-area" v-if="!isGameOver">
+       <!-- Reserved Message -->
+       <div v-if="isReserved" class="reserved-message">
+         <p>Not game today cause I'm going to do a bit. Sorry.</p>
+       </div>
+
+       <!-- Guess Input & Autocomplete -->
+       <div class="guess-area" v-if="!isGameOver && !isReserved">
         <div class="autocomplete-wrapper">
           <input
             type="text"
@@ -279,6 +284,8 @@ const maxWinCountForHistogram = computed(() => {
     const counts = [...Object.values(gameStats.value.wins), gameStats.value.losses];
     return Math.max(...counts, 1); // Return at least 1 to avoid division by zero if no games played
 });
+
+const isReserved = computed(() => solution.value?.quote === "RESERVED");
 
 
 // --- Methods ---
@@ -945,6 +952,17 @@ hr {
 }
 
 .error-message {
+    color: #ff8a80;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    background-color: #5a1e21;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #8e353a;
+}
+
+.reserved-message {
     color: #ff8a80;
     font-weight: bold;
     text-align: center;

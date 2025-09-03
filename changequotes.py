@@ -1,5 +1,5 @@
-import json
 import datetime
+import json
 from collections import OrderedDict
 from pathlib import Path
 
@@ -54,18 +54,18 @@ def save_quotes(quotes):
 
 
 if __name__ == "__main__":
-    # date = "2025-05-10"  
-    # new_quote = {
-    #     "quote": "Yeah! Is he gonna be--oh please please Bitter, defeated, angry doesn't want to be along for the ride. Oh, please oh we might do another stream next week, please.[...] Please I will up it to six out of ten",
-    #     "title": "New Content",
-    #     "url": "https://example.com/video",
-    #     "year": 2023,
-    #     "type": "Stream",
-    #     "game": "Example Game",
-    # }
+    date = "2025-07-04"  
+    new_quote = {
+        "quote": "RESERVED",
+        "title": "RESERVED",
+        "url": "https://example.com/video",
+        "year": 2025,
+        "type": "Stream",
+        "game": "Example Game",
+    }
 
-    # quotes = insert_quote(date, new_quote)
+    quotes = insert_quote(date, new_quote)
     # save_quotes(quotes)
 
-    quotes = remove_quote("2025-10-27")
+    # quotes = remove_quote("2025-10-27")
     save_quotes(quotes)

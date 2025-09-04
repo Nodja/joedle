@@ -300,7 +300,7 @@ function getTodayKey() {
 
 async function loadQuotes() {
   try {
-    const response = await fetch('/quotes.json');
+    const response = await fetch(`/quotes.json?nocache=${Math.random()}`);
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }

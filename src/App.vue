@@ -8,18 +8,23 @@
       <p class="error-message">Could not find a quote for today ({{ todayKey }}). Please check quotes.json or try again tomorrow.</p>
     </div>
     <div v-else>
-       <!-- Quote Display -->
-       <blockquote class="quote-display">
-         "{{ quoteDisplay }}"
-       </blockquote>
+        <!-- Quote Display -->
+        <blockquote v-if="!isReserved && !isNoQuote" class="quote-display">
+          "{{ quoteDisplay }}"
+        </blockquote>
 
-       <!-- Reserved Message -->
-       <div v-if="isReserved" class="reserved-message">
-         <p>No game today cause I'm going to do a bit, sorry.<br/>If joe is reading this on stream: I messed up/forgot, ooops.</p>
-       </div>
+        <!-- Reserved Message -->
+        <div v-if="isReserved" class="reserved-message">
+          <p>No game today cause I'm going to do a bit, sorry.<br/>If joe is reading this on stream: I messed up/forgot, ooops.</p>
+        </div>
 
-       <!-- Guess Input & Autocomplete -->
-       <div class="guess-area" v-if="!isGameOver && !isReserved">
+        <!-- No Quote Message -->
+        <div v-if="isNoQuote" class="noquote-message">
+          <p>No quote available for today, sorry.</p>
+        </div>
+
+        <!-- Guess Input & Autocomplete -->
+        <div class="guess-area" v-if="!isGameOver && !isReserved && !isNoQuote">
         <div class="autocomplete-wrapper">
           <input
             type="text"
@@ -286,6 +291,8 @@ const maxWinCountForHistogram = computed(() => {
 });
 
 const isReserved = computed(() => solution.value?.quote === "RESERVED");
+
+const isNoQuote = computed(() => solution.value?.quote === "NOQUOTE");
 
 
 // --- Methods ---
@@ -971,6 +978,17 @@ hr {
     padding: 10px;
     border-radius: 4px;
     border: 1px solid #8e353a;
+}
+
+.noquote-message {
+    color: #ffeb3b;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    background-color: #5a4a1e;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #8e6b35;
 }
 
 /* Responsive Adjustments */

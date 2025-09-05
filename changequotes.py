@@ -54,9 +54,9 @@ def save_quotes(quotes):
 
 
 if __name__ == "__main__":
-    date = "2025-09-04"  
+    date = "2025-09-05"  
     new_quote = {
-        "quote": "RESERVED",
+        "quote": "NOQUOTE",
         "title": "RESERVED",
         "url": "https://example.com/video",
         "year": 2025,

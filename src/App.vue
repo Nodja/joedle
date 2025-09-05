@@ -218,7 +218,7 @@ const gameStats = ref({
 onMounted(async () => {
   todayKey.value = getTodayKey();
   // *** For Testing: Override todayKey if needed ***
-  todayKey.value = '2025-09-04'; // Example: Uncomment to test with a specific date
+  // todayKey.value = '2025-09-04'; // Example: Uncomment to test with a specific date
 
   loadStats(); // Load stats first
   await loadQuotes(); // Then load quotes
